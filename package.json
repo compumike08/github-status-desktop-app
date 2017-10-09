@@ -4,6 +4,8 @@
   "private": true,
   "author": "compumike08",
   "license": "MIT",
+  "main": "src/electron-starter.js",
+  "homepage": "./",
   "dependencies": {
     "config": "^1.26.2",
     "react": "^16.0.0",
@@ -11,10 +13,13 @@
     "react-scripts": "1.0.14"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cross-env BROWSER=none NODE_ENV=development nf start -p 3000",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "electron-start": "node src/electron-wait-react",
+    "react-start": "react-scripts start"
   },
   "devDependencies": {
     "cross-env": "^5.0.5",
