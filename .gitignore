@@ -1,3 +1,7 @@
+# Config folder/files
+config/*.json
+!config/default.json
+
 # Logs
 logs
 *.log
