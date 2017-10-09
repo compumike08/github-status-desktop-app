@@ -1,6 +1,6 @@
 # Config folder/files
-config/*.json
-!config/default.json
+app_config/*.json
+!app_config/default.json
 
 # Logs
 logs
