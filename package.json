@@ -9,6 +9,7 @@
   "dependencies": {
     "axis.js": "^1.2.1",
     "config": "^1.26.2",
+    "es6-error": "^4.0.2",
     "material-ui": "^0.19.4",
     "moment": "^2.18.1",
     "octonode": "^0.8.0",
