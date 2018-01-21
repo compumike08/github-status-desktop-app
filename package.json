@@ -21,7 +21,6 @@
     "react-scripts": "1.0.14",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "toastr": "^2.1.2",
     "url-search-params": "^0.10.0"
   },
   "scripts": {
