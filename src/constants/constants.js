@@ -11,3 +11,5 @@ export const PANEL_CONTENT_TYPE_CLASS = {
   HEADING: "panel-heading",
   BODY: "panel-body"
 };
+
+export const NOTIFICATION_DURATION = 4000;

@@ -1,8 +1,9 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import toastr from 'toastr';
+import { NotificationActions, NotificationContainer } from 'material-ui-notifications';
 
+import {NOTIFICATION_DURATION} from "../../constants/constants";
 import * as repoActions from '../../actions/repoActions';
 import ReposList from './ReposList';
 
@@ -17,10 +18,19 @@ class ReposContainer extends React.Component {
 
   handleGetRepos(){
     this.props.actions.loadRepos().then(() => {
-      toastr.success("Repo list fetched successfully!");
+      NotificationActions.addNotification({
+          autoHide: NOTIFICATION_DURATION,
+          headerLabel: "Repos Fetched",
+          text: "Repo list fetched successfully!"
+      });
     }).catch(error => {
       console.log(error);
-      toastr.error("Repo list fetch failed!");
+      NotificationActions.addNotification({
+          autoHide: NOTIFICATION_DURATION,
+          primaryColor: "red",
+          headerLabel: "Repos Not Fetched",
+          text: "Repo list fetch failed!"
+      });
     });
   }
 
@@ -42,6 +52,7 @@ class ReposContainer extends React.Component {
 
     return (
       <div>
+        <NotificationContainer />
 
         <div className="row">
           <div className="col-sm-3">
