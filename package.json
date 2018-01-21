@@ -11,7 +11,7 @@
     "config": "^1.26.2",
     "es6-error": "^4.0.2",
     "jquery": "^3.3.1",
-    "material-ui": "^0.19.4",
+    "material-ui": "^0.20.0",
     "material-ui-notifications": "^0.1.4",
     "moment": "^2.18.1",
     "octonode": "^0.8.0",
