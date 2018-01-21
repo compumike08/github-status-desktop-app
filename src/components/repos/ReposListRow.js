@@ -1,8 +1,13 @@
 import React, {PropTypes} from 'react';
+import {ListItem} from 'material-ui/List';
 
 const ReposListRow = ({repo, onSelect}) => {
     return (
-        <button type="button" className="list-group-item" value={repo.id} onClick={onSelect}>{repo.name}</button>
+        <ListItem
+            primaryText={repo.name}
+            value={repo.id}
+            onClick={onSelect}
+        />
     );
 };
 

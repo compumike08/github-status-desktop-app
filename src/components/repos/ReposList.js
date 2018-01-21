@@ -1,7 +1,14 @@
 import React, {PropTypes} from 'react';
+import {List} from 'material-ui/List';
+import Subheader from 'material-ui/Subheader';
+import Paper from 'material-ui/Paper';
 import ReposListRow from './ReposListRow';
 
 const ReposList = ({repos, onSelect}) => {
+    const paperStyle = {
+        margin: 20
+    };
+
     let reposListRowElement = (
         <div className="panel-body">
             <div>
@@ -15,22 +22,20 @@ const ReposList = ({repos, onSelect}) => {
 
     if (repos !== null) {
         reposListRowElement = (
-            <div className="panel-body">
-                <span className="bold">Select a repository:</span>
-                <div className="list-group">
-                    {repos.map(repo =>
-                        <ReposListRow key={repo.id} repo={repo} onSelect={onSelect}/>
-                    )}
-                </div>
-            </div>
+            <List>
+                <Subheader>Select a repository:</Subheader>
+                {repos.map(repo =>
+                    <ReposListRow key={repo.id} repo={repo} onSelect={onSelect}/>
+                )}
+            </List>
         );
     }
 
     return (
-        <div className="panel panel-default">
-            <div className="panel-heading">Repositories</div>
+        <Paper style={paperStyle} rounded={false}>
+            <div className="paper-heading bold">Repositories</div>
             {reposListRowElement}
-        </div >
+        </Paper>
     );
 };
 
